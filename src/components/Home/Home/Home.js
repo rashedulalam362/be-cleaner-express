@@ -5,7 +5,8 @@ import FeaturedService from '../FeaturesService/FeaturesService';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Services from '../Services/Services';
-import Testimonial from '../Testimonial/Testimonial';
+
+import Review from './Review/Review';
 
 const Home = () => {
     return (
@@ -14,7 +15,8 @@ const Home = () => {
             <ContactInfo/>
             <FeaturedService/>
             <Services/>
-            <Testimonial/>
+            <Review/>
+         
             <Footer/>
         </div>
     );
