@@ -11,7 +11,7 @@ const CheckOrder = () => {
     const [order, setOrder]=useContext(OrderContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5055/service/${serviceId}   `)
+        fetch(`https://serene-meadow-06584.herokuapp.com/service/${serviceId}   `)
         .then(res => res.json())
         .then(data => {setServiceData(data[0]) 
           setOrder(data[0])

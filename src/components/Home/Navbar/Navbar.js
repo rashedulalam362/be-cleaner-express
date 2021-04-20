@@ -52,9 +52,9 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/services">services</Nav.Link>
-                        <Nav.Link as={Link} to="/services">admin</Nav.Link>
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/AddService">services</Nav.Link>
+                        <Nav.Link as={Link} to="/AddReview">review</Nav.Link>
+                        <Nav.Link as={Link} to="/">Feature</Nav.Link>
                     </Nav>
                   
                 </Navbar.Collapse>

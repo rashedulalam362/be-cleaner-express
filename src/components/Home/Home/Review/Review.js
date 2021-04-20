@@ -6,7 +6,7 @@ import ReviewDetails from '../ReviewDetails/ReviewDetails';
 const Review = () => {
   const [reviews, setReviews]=useState([])
   useEffect(()=>{ 
-    fetch('http://localhost:5055/reviews')
+    fetch('https://serene-meadow-06584.herokuapp.com/reviews')
     .then(res=>res.json())
     .then(data=>setReviews(data))
   

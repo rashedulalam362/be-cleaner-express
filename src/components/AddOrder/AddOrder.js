@@ -25,7 +25,7 @@ const AddOrder = () => {
    
 
     };
-    const url=`http://localhost:5055/addOrder`;
+    const url=`https://serene-meadow-06584.herokuapp.com/addOrder`;
    console.log(orderDetail);
     fetch(url,{
       method:'POST',

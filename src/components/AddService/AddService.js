@@ -18,7 +18,7 @@ const AddService = () => {
    
 
     };
-    const url=`http://localhost:5055/addService`;
+    const url=`https://serene-meadow-06584.herokuapp.com/addService`;
    console.log(eventData);
     fetch(url,{
       method:'POST',

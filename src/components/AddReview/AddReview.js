@@ -20,7 +20,7 @@ const AddReview = () => {
    
 
     };
-    const url=`http://localhost:5055/addReview`;
+    const url=`https://serene-meadow-06584.herokuapp.com/addReview`;
    console.log(eventData);
     fetch(url,{
       method:'POST',

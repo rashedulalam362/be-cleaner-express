@@ -14,11 +14,12 @@ import DashBoard from "./components/DashBoard/DashBoard/DashBoard";
 
 import Home from "./components/Home/Home/Home";
 import Services from "./components/Home/Services/Services";
+import ListShow from "./components/ListShow/ListShow";
 import Login from "./components/Login/Login";
 import Orderlist from "./components/OrderList/Orderlist";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 export const UserContext = createContext();
-export const OrderContext = createContext();
+ export const OrderContext = createContext();
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -51,6 +52,9 @@ function App() {
           <PrivateRoute path="/service/:serviceId">
             <CheckOrder />
           </PrivateRoute>
+          <Route path="/List">
+          <ListShow/>
+        </Route>
        </Switch> 
     </Router>
     </UserContext.Provider>

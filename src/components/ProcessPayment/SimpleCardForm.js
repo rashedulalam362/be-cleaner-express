@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import { OrderContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 const SimpleCardPayment = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [order, setOrder]=useContext(OrderContext)
-  const handleSubmit = async (event) => {
+  const newOrder={
+    name:order.name,
+    email:order.email
 
+  }
+  const handleSubmit = async (event) => {
+   
 
     // Block native form submission.
     event.preventDefault();
@@ -15,6 +21,8 @@ const SimpleCardPayment = () => {
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
       // form submission until Stripe.js has loaded.
+    
+
       return;
     }
 
@@ -34,6 +42,14 @@ const SimpleCardPayment = () => {
     } else {
       console.log('[PaymentMethod]', paymentMethod);
       console.log(order.name);
+      fetch("http://localhost:5055/addList",{
+        method:'POST',
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(newOrder)
+      })
+    
     }
   };
 
@@ -41,7 +57,7 @@ const SimpleCardPayment = () => {
     <form onSubmit={handleSubmit}>
       <CardElement />
       <button type="submit" disabled={!stripe}>
-        Pay
+        <Link to='/List'>Pay Now</Link>
       </button>
     </form>
   );
