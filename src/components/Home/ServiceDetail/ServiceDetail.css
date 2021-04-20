@@ -1,0 +1,9 @@
+.card Img:hover  {
+width: 200px;
+cursor: pointer;
+
+transform: rotate(0deg) scale(1) translateY(10px);
+transition: .5s all ease;
+z-index: 400;
+}
+

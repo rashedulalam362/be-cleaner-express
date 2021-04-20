@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-
+import './ServiceDetail.css'
 const ServiceDetail = (props) => {
 
   const {_id,name,description,price, imageURL} = props.service;

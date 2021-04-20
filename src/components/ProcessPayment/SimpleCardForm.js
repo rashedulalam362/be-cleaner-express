@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { OrderContext } from '../../App';
 
 const SimpleCardPayment = () => {
   const stripe = useStripe();
   const elements = useElements();
-
+  const [order, setOrder]=useContext(OrderContext)
   const handleSubmit = async (event) => {
+
+
     // Block native form submission.
     event.preventDefault();
 
@@ -30,6 +33,7 @@ const SimpleCardPayment = () => {
       console.log('[error]', error);
     } else {
       console.log('[PaymentMethod]', paymentMethod);
+      console.log(order.name);
     }
   };
 

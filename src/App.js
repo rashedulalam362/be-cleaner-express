@@ -18,9 +18,13 @@ import Login from "./components/Login/Login";
 import Orderlist from "./components/OrderList/Orderlist";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 export const UserContext = createContext();
+export const OrderContext = createContext();
 function App() {
+
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [order, setOrder] = useState({});
   return (
+    <OrderContext.Provider value={[order, setOrder]}>
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <p>Name: {loggedInUser.name}</p>
     <Router >
@@ -50,6 +54,7 @@ function App() {
        </Switch> 
     </Router>
     </UserContext.Provider>
+    </OrderContext.Provider>
   );
 }
 

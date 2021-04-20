@@ -1,20 +1,26 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { UserContext } from '../../App';
+import { OrderContext, UserContext } from '../../App';
 
 // import Button from 'react-bootstrap/Button';
 
 const AddOrder = () => {
   const[orders, setOrders]=useState([]);
   const [loggedInUser, setLoggedInUser]=useContext(UserContext)
+  const [order, setOrder]=useContext(OrderContext)
+  console.log(order);
   const [ImageURL,setImageURL]=useState([]);
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   
   
   const onSubmit = data => {
     console.log(data);
-    const orderDetail={...loggedInUser,orders:data,
+  
+    const orderDetail={
+    name:data.service,
+    
+    price:data.price
    
    
 
@@ -51,22 +57,17 @@ const AddOrder = () => {
 
 
   }
-  // const deleteBook=id=>{
-  //   console.log(id);
-
-  // }
+ 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
      
-      <input name="name" defaultValue="loggedInUser.name" {...register("name")} /><br/>
-      <input name="email"  defaultValue="loggedInUser.email" {...register("email")} /><br/>
-      
-      <input {...register("exampleRequired", { required: true })} type="file" onChange={handleImageUpload} /><br/>
-      
+     <input name="name " defaultValue={loggedInUser.name} {...register("email")} /><br/>
+      <input name="email " defaultValue={loggedInUser.email} {...register("service")} /><br/>
+      <input name="order " defaultValue={order.name} {...register("order")} /><br/>
       
       
-      <input type="submit" /><br/>
-      {/* <button onClick={()=>deleteBook(books._id)} >deleteBtn</button> */}
+      
+    
     </form>
    
   );

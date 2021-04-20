@@ -1,39 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import houseclenaer from '../../../images/housecleaner.jpg'
-import maidservicer from '../../../images/maidservice.jpg'
-import officecleaner from '../../../images/officecleaner.jpg'
-import windowcleaner from '../../../images/windowcleaner.jpg'
+
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
-// const serviceInfoData=[
-//     {
-//       serviceId:1,
-//       name:'Hose Cleaning ',
-//       img:houseclenaer,
-//       description: 'Womens, mens and childrens fashion, accesories, shoes, jewellery and more are in the Fashion Zone' 
-//     },
-//     {
-//       serviceId:2,
-//       name:'Maid Service',
-//       img:maidservicer,
-//       description:'Womens, mens and childrens fashion, accesories, shoes, jewellery and more are in the Fashion Zone ',
-//     },
-//     {
-//       serviceId:3,
-//       name:'Office Cleaner ',
-//       img:officecleaner,
-//       description:'Womens, mens and childrens fashion, accesories, shoes, jewellery and more are in the Fashion Zone  '
-//     },
-//     {
-//       id:3, 
-//       name:'windowcleaner  ',
-//         img:windowcleaner,
-//         description:'Womens mens and childrens fashion, accesories, shoes, jewellery and more are in the Fashion Zone '
-//       },
-      
-    
-    
-    
-//     ]
 
 
 const Services = () => {

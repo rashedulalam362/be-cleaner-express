@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import { OrderContext } from '../../App';
 
 const CheckOrder = () => {
     const {serviceId} = useParams();
     
     const [serviceData, setServiceData] = useState({});
-   
+    const [order, setOrder]=useContext(OrderContext)
+
     useEffect(() => {
         fetch(`http://localhost:5055/service/${serviceId}   `)
         .then(res => res.json())
-        .then(data =>setServiceData(data[0]));
+        .then(data => {setServiceData(data[0]) 
+          setOrder(data[0])
+        });
      
      }, [serviceId])
+
+     console.log(order);
    
 
     
